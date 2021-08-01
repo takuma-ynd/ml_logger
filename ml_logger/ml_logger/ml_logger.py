@@ -432,6 +432,17 @@ class ML_Logger:
         self.counter[key] += 1
         return n and self.counter[key] % n == 0
 
+    def until(self, n=1, key="until"):
+        """
+        returns True until the counter hits n. Use the key to count different intervals.
+
+        :param n:
+        :param key:
+        :return:
+        """
+        self.counter[key] += 1
+        return n and self.counter[key] <= n
+
     def count(self, key="default"):
         self.counter[key] += 1
         return self.counter[key]
