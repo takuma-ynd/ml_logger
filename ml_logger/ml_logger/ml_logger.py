@@ -1899,6 +1899,7 @@ class ML_Logger:
         :param stop:
         :return: None if the director does not exist (internal FileNotFoundError)
         """
+        print('prefix', self.prefix)
         print('query', query)
         print('wd', wd)
         print('recursive (flag)', recursive)
@@ -1909,6 +1910,7 @@ class ML_Logger:
                     self.client.glob(query, wd="/", recursive=recursive, start=start, stop=stop)]
 
         wd = pJoin(self.prefix, wd or "")
+        print('pjoined wd', wd)
         return self.client.glob(query, wd=wd, recursive=recursive, start=start, stop=stop)
 
     def get_exps(self, *prefixes, as_dataframe=True, show_progress=True):
