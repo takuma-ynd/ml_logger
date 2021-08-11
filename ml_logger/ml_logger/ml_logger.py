@@ -1899,7 +1899,12 @@ class ML_Logger:
         :param stop:
         :return: None if the director does not exist (internal FileNotFoundError)
         """
+        print('query', query)
+        print('wd', wd)
+        print('recursive (flag)', reqursive)
+        print('self.client', self.client)
         if not wd and query.startswith('/'):
+            print('not wd and query.startswith("/") is True')
             return ['/' + p for p in
                     self.client.glob(query, wd="/", recursive=recursive, start=start, stop=stop)]
 

@@ -213,6 +213,7 @@ class LogClient:
         c.close()
 
     def glob(self, query, **kwargs):
+        print('self.local_server', self.local_server)
         if self.local_server:
             return self.local_server.glob(query, **kwargs)
         else:

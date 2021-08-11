@@ -161,7 +161,9 @@ class LoggingServer:
 
         from ml_logger.helpers.file_helpers import CwdContext
         try:
+            print("cwdcontext", self.abs_path(wd or ""))
             with CwdContext(self.abs_path(wd or "")):
+                print(list(islice(iglob(query, recursive=recursive), start, stop)))
                 return list(islice(iglob(query, recursive=recursive), start, stop))
         except PermissionError:
             print('PermissionError:', os.path.join(self.root, wd or ""))
