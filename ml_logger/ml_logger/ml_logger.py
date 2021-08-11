@@ -1901,7 +1901,7 @@ class ML_Logger:
         """
         print('query', query)
         print('wd', wd)
-        print('recursive (flag)', reqursive)
+        print('recursive (flag)', recursive)
         print('self.client', self.client)
         if not wd and query.startswith('/'):
             print('not wd and query.startswith("/") is True')
